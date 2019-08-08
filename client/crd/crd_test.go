@@ -10,6 +10,7 @@ import (
 	"github.com/cuijxin/kooper-atom/log"
 	mtime "github.com/cuijxin/kooper-atom/mocks/wrapper/time"
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/mock"
 	apiextensionsv1beta1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
 	apiextensionscli "k8s.io/apiextensions-apiserver/pkg/client/clientset/clientset/fake"
 	kubeerrors "k8s.io/apimachinery/pkg/api/errors"
@@ -246,22 +247,22 @@ func TestCRDWaitToBePresent(t *testing.T) {
 		expErr         bool
 	}{
 		{
-			name: "If the cluster version is not supported, it should fail",
+			name:           "If the cluster version is not supported, it should fail",
 			clusterVersion: badClusterVersion,
-			crdName: "test",
-			timeout: 1,
-			interval: never,
-			readyAfter: never,
-			expErr: true,
+			crdName:        "test",
+			timeout:        1,
+			interval:       never,
+			readyAfter:     never,
+			expErr:         true,
 		},
 		{
-			name: "After some time the CRD will be ready and won't timeout",
+			name:           "After some time the CRD will be ready and won't timeout",
 			clusterVersion: goodClusterVersion,
-			crdName: "test",
-			timeout: 50 * time.Millisecond,
-			interval: 5 * time.Millisecond,
-			readyAfter: 25 * time.Millisecond,
-			expErr: false,
+			crdName:        "test",
+			timeout:        50 * time.Millisecond,
+			interval:       5 * time.Millisecond,
+			readyAfter:     25 * time.Millisecond,
+			expErr:         false,
 		},
 	}
 	for _, test := range tests {
