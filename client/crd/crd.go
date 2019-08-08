@@ -6,9 +6,9 @@ import (
 
 	apiextensionsv1beta1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
 	apiextensionscli "k8s.io/apiextensions-apiserver/pkg/client/clientset/clientset"
+	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	kubeversion "k8s.io/apimachinery/pkg/util/version"
-	"k8s.io/client-go/pkg/api/errors"
 
 	"github.com/cuijxin/kooper-atom/log"
 	wraptime "github.com/cuijxin/kooper-atom/wrapper/time"
