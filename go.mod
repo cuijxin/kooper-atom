@@ -4,6 +4,7 @@ go 1.12
 
 require (
 	github.com/evanphx/json-patch v4.5.0+incompatible // indirect
+	github.com/gogo/protobuf v1.2.1 // indirect
 	github.com/golang/groupcache v0.0.0-20190702054246-869f871628b6 // indirect
 	github.com/google/uuid v1.1.1 // indirect
 	github.com/googleapis/gnostic v0.3.0 // indirect
