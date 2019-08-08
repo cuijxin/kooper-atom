@@ -3,7 +3,7 @@ package handler
 import (
 	"context"
 
-	"k8s.io/client-go/pkg/runtime"
+	"k8s.io/apimachinery/pkg/runtime"
 
 	"github.com/cuijxin/kooper-atom/log"
 )
